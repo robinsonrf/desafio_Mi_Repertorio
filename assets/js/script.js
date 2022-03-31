@@ -40,6 +40,10 @@ let url = "http://localhost:3000/cancion";
     cancion;
     artista;
     tono;
+
+    // SE AGREGO VALIDACION AL FORMULARIO
+    if (cancion.value !== '' && artista.value !== '' && tono.value !== ''){
+    
     let data = {
       cancion: cancion.value,
       artista: artista.value,
@@ -47,7 +51,10 @@ let url = "http://localhost:3000/cancion";
     };
     console.log(data);
     axios.post(url, data).then(() => getData());
-  }
+  }else{
+    alert("Debe Completar los campos")
+}
+}
 
   function eliminarCancion(i, id) {
     axios.delete(url + "?id=" + id).then(() => {
@@ -81,3 +88,18 @@ let url = "http://localhost:3000/cancion";
         document.getElementById("editar").style.display = "none";
       });
   }
+
+  // TRANSITION PARA EL FONDO DEL NAV
+
+  $(document).ready(function () {
+$(function (){
+  $(window).scroll(function(){
+     if ($(this).scrollTop() > 150) {
+      $('.navscroll').addClass("bg-nav");
+     } else {
+      $(".navscroll").removeClass("bg-nav");
+     }
+  });
+});
+
+});

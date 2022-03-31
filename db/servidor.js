@@ -19,10 +19,22 @@ http.createServer(async (req, res)=>{
         res.end(script);
     }
 
+    if (req.url == "/logotipo") {
+        res.setHeader('Content-Type', 'image/jepg');
+        const logo = fs.readFileSync(path.join(__dirname, '..','/assets/img/logo.png'));
+        res.end(logo);
+    }
+
     if (req.url == "/style") {
         res.setHeader('Content-Type', 'text/css');
         const css = fs.readFileSync(path.join(__dirname, '..','/assets/css/style.css') , "utf8");
         res.end(css);
+    }
+
+    if (req.url == "/bg-body") {
+        res.setHeader('Content-Type', 'image/jpeg');
+        const bg_body = fs.readFileSync(path.join(__dirname, '..','/assets/img/banner.jpg'));
+        res.end(bg_body);
     }
 
 

@@ -1,5 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap');
+
 body {
-    text-align: center;
-    background: #283593 !important;
-    color: white;
+  font-family: "Open Sans", Arial, sans-serif;
+	font-weight: 500 !important;
+	color: #fff;
+	background: #cd003a;
   }
+
+/* NAV BAR */
+#navbar{
+  z-index: 5;
+  width: 100vw;
+}
+.space{
+  letter-spacing: 4px;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover {
+	color: #6d6b6b !important;
+  text-decoration: none;
+	-moz-transition: background-color, color, 0.3s;
+	-o-transition: background-color, color, 0.3s;
+	-webkit-transition: background-color, color, 0.3s;
+	transition: background-color, color, 0.3s;
+}
+
+
+.hero-section{
+  background-image: url(/bg-body);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.form-hero{
+  position: absolute;
+  bottom: 7rem;
+}
+
+/* LINEA HR */
+.ancho-hr{
+  width: 90%;
+}
+
+/* FOOTER ICONOS */
+#footer i{
+  color: #ffffff;
+}
+/* TRANSITION PARA EL FONDO DEL NAV */
+.navscroll {
+  transition:background-color 2000ms; 
+}
+
+.navscroll.bg-nav {
+  background-color:#cd003a !important;
+}
