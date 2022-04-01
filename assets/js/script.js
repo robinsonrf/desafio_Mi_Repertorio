@@ -42,7 +42,7 @@ let url = "http://localhost:3000/cancion";
     tono;
 
     // SE AGREGO VALIDACION AL FORMULARIO
-    if (cancion.value !== '' && artista.value !== '' && tono.value !== ''){
+    if (cancion.value.trim() !== '' && artista.value.trim() !== '' && tono.value.trim() !== ''){
     
     let data = {
       cancion: cancion.value,
@@ -75,6 +75,7 @@ let url = "http://localhost:3000/cancion";
   }
 
   function editarCancion(id) {
+    if (cancion.value.trim() !== '' && artista.value.trim() !== '' && tono.value.trim() !== ''){
     axios
       .put(url, {
         id,
@@ -88,6 +89,7 @@ let url = "http://localhost:3000/cancion";
         document.getElementById("editar").style.display = "none";
       });
   }
+}
 
   // TRANSITION PARA EL FONDO DEL NAV
 
@@ -103,3 +105,5 @@ $(function (){
 });
 
 });
+
+asdasasasddsaasddas
